@@ -12,13 +12,13 @@ var FormView = Backbone.View.extend({
     var el = this.make('input', defaults);
     this.bindElementToAttribute(el, name, "keyup");
     return el;
-  }, 
+  },
 
   hiddenField: function(name) {
     var el = this.make('input', {type: "hidden", name: name, value: this.model.get(name)});
     this.bindElementToAttribute(el, name);
     return el;
-  }, 
+  },
 
   textArea: function(name) {
     var el = this.make('textarea', {name: name, value: this.model.get(name)});
@@ -67,17 +67,17 @@ var FormView = Backbone.View.extend({
   },
 
   submit: function() {
-    var el = this.make('input', {id: "submit", type: "button", value: "Save"});
+    var el = this.make('input', {id: "submit", type: "button", value: I18n.t("actions.save")});
     return el;
   },
 
   destroy: function() {
-    var el = this.make('input', {id: "destroy", type: "button", value: "Delete"});
+    var el = this.make('input', {id: "destroy", type: "button", value: I18n.t("actions.delete")});
     return el;
   },
 
   cancel: function() {
-    var el = this.make('input', {id: "cancel", type: "button", value: "Cancel"});
+    var el = this.make('input', {id: "cancel", type: "button", value: I18n.t("actions.cancel")});
     return el;
   },
 

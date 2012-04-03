@@ -16,9 +16,13 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'cancan'
 gem 'transitions', '0.0.9', :require => ["transitions", "active_record/transitions"]
+gem 'i18n-js'
 
 gem 'fastercsv', '1.5.3', :platforms => :ruby_18
 # (using standard csv lib if ruby version is 1.9)
+gem 'therubyracer'
+# gem 'puma'
+gem 'thin'
 
 group :production do
   gem 'pg'

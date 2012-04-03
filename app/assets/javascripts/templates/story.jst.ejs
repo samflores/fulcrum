@@ -10,20 +10,33 @@
 <div class="state-actions">
   <form>
     <% _.each(story.events(),  function(value) { %>
-      <input type="button" class="transition <%= value %>" value="<%= value %>"/>
+      <input type="button" class="transition <%= value %>" data-locale="<%= I18n.defaultLocale %>" value="<%= I18n.t('transitions.' + value) %>"/>
     <% }); %>
   </form>
 </div>
 <% } %>
-<div class="story-icons"><% if (view.saveInProgress) { %><a
-  class="icon icons-throbber" title="Saving ..."></a><% } else { %><a
-  href="#" class="icon icons-expand expand" title="Expand"></a><% } %><span class="popover-activate"><span
-  class="icon icons-<%= story.get('story_type') %> story_type"
-  title="<%= story.story_type %>: <%= story.id %>"><%= story.story_type %></span><% if (story.estimated()) { %><span
-  class="estimate estimate_<%= story.get('estimate') %>"><%= story.get('estimate') %></span><% } %><% if (story.hasDetails()) { %><span
-  class="icon icons-details"></span><% } %></span></div>
+<div class="story-icons">
+  <% if (view.saveInProgress) { %>
+    <a class="icon icons-throbber" title="Saving ..."></a>
+  <% } else { %>
+    <a href="#" class="icon icons-expand expand" title="Expand"></a>
+  <% } %>
+  <span class="popover-activate">
+    <span class="icon icons-<%= story.get('story_type') %> story_type" title="<%= story.story_type %>: <%= story.id %>">
+      <%= story.story_type %>
+    </span>
+    <% if (story.estimated()) { %>
+      <span class="estimate estimate_<%= story.get('estimate') %>"><%= story.get('estimate') %></span>
+    <% } %>
+    <% if (story.hasDetails()) { %>
+      <span class="icon icons-details"></span>
+    <% } %>
+  </span>
+</div>
 <div class="story-title">
-  <% if (story.get('labels')) { %><span class="tags"><%= story.escape('labels') %></span><% } %>
+  <% if (story.get('labels')) { %>
+    <span class="tags"><%= story.escape('labels') %></span>
+  <% } %>
   <%= story.escape('title') %>
   <% if (story.owned_by()) { %>
     <abbr class="initials" title="<%= story.owned_by().escape('name') %>">

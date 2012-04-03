@@ -4,19 +4,33 @@
 en:
   fulcrum:  "Fulcrum"
 
-  log out:  "Log out"
-  log in:   "Log in"
-  sign up:  "Sign up"
-  edit:     "Edit"
-  delete:   "Delete"
-  back:     "Back"
-
   author unknown: "Author Unknown"
 
-  activerecord:
-    models:
-      user: 'Member'
+  transitions:
+    start: "start"
+    finish: "finish"
+    deliver: "deliver"
+    accept: "accept"
+    reject: "reject"
+    restart: "restart"
 
+  panels:
+    done: "Done"
+    in_progress: "In Progress"
+    backlog: "Backlog"
+    chilly_bin: "Chilly Bin"
+
+  actions:
+    log_out:  "Log out"
+    log_in:   "Log in"
+    sign_up:  "Sign up"
+    edit:     "Edit"
+    delete:   "Delete"
+    back:     "Back"
+    add_story: "Add Story"
+    edit: "Edit"
+    import: "Import"
+    export: "Export"
 
   projects:
     new project:        "New Project"
@@ -39,3 +53,9 @@ en:
   time:
     formats:
       note_date: "%b %d, %Y"
+
+  activerecord:
+    models:
+      user: 'Member'
+      story: 'Story'
+      project: 'Project'

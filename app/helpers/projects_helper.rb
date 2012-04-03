@@ -3,7 +3,7 @@ module ProjectsHelper
   # use in a select helper.
   def point_scale_options
     Project::POINT_SCALES.collect do |name,values|
-      ["#{name.humanize} (#{values.join(',')})", name]
+      ["#{I18n.t('point_scale.' + name)} (#{values.join(',')})", name]
     end
   end
 
@@ -11,7 +11,7 @@ module ProjectsHelper
   # a select helper.
   def iteration_length_options
     (1..4).collect do |weeks|
-      [pluralize(weeks, "week"), weeks]
+      [pluralize(weeks, I18n.t("words.week")), weeks]
     end
   end
 

@@ -18,5 +18,5 @@ csv.each do |row|
   row = row.to_hash
   project.stories.create!(:state => row["Current State"], :title => row["Story"],
                           :story_type => row["Story Type"], :requested_by => user,
-                         :estimate => row["Estimate"])
+                          :estimate => row["Estimate"])
 end

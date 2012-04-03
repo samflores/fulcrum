@@ -19,4 +19,7 @@
 //= require bootstrap-twipsy
 //= require bootstrap-popover
 //= require tag-it
+//= require i18n
+//= require i18n/setup
+//= require i18n/translations
 //= require_tree .

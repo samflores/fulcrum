@@ -115,7 +115,8 @@ var StoryView = FormView.extend({
   transition: function(ev) {
     // The name of the function that needs to be called on the model is the
     // value of the form button that was clicked.
-    var transitionEvent = ev.target.value;
+    // var transitionEvent = ev.target.value;
+    var transitionEvent = $(ev.target).attr('class').replace(/\s?transition\s?/, '');
 
     this.saveInProgress = true;
     this.render();
@@ -242,7 +243,7 @@ var StoryView = FormView.extend({
               this.make("a", {'class': "collapse icon icons-collapse"})
             );
           }
-          $(div).append(this.textField("title", {'placeholder': 'Story title'}));
+          $(div).append(this.textField("title", {'placeholder': I18n.t('fields.story_title')}));
         })
       );
 
@@ -261,31 +262,44 @@ var StoryView = FormView.extend({
       this.$el.append(
         this.makeFormControl({
           name: "estimate",
-          label: "Estimate",
-          control: this.select("estimate", this.model.point_values(), {blank: 'No estimate'})
+          label: I18n.t("fields.estimate"),
+          control: this.select("estimate", this.model.point_values(), {blank: I18n.t('no_estimate')})
         })
       );
 
       this.$el.append(
         this.makeFormControl({
           name: "story_type",
-          label: "Story Type",
-          control: this.select("story_type", ["feature", "chore", "bug", "release"])
+          label: I18n.t("fields.story_type"),
+          control: this.select("story_type", [
+            [I18n.t('story_type.feature'),"feature"],
+            [I18n.t('story_type.chore'),"chore"],
+            [I18n.t('story_type.bug'),"bug"],
+            [I18n.t('story_type.release'),"release"]
+          ])
         })
       );
 
       this.$el.append(
         this.makeFormControl({
           name: "state",
-          label: "State",
-          control: this.select("state", ["unscheduled", "unstarted", "started", "finished", "delivered", "accepted", "rejected"])
+          label: I18n.t("fields.state"),
+          control: this.select("state", [
+            [I18n.t('story_state.unscheduled'), "unscheduled"],
+            [I18n.t('story_state.unstarted'), "unstarted"],
+            [I18n.t('story_state.started'), "started"],
+            [I18n.t('story_state.finished'), "finished"],
+            [I18n.t('story_state.delivered'), "delivered"],
+            [I18n.t('story_state.accepted'), "accepted"],
+            [I18n.t('story_state.rejected'), "rejected"]
+          ])
         })
       );
 
       this.$el.append(
         this.makeFormControl({
           name: "requested_by_id",
-          label: "Requested By",
+          label: I18n.t("fields.requested_by"),
           control: this.select("requested_by_id",
             this.model.collection.project.users.forSelect(),{blank: '---'})
         })
@@ -294,7 +308,7 @@ var StoryView = FormView.extend({
       this.$el.append(
         this.makeFormControl({
           name: "owned_by_id",
-          label: "Owned By",
+          label: I18n.t('fields.owned_by'),
           control: this.select("owned_by_id",
             this.model.collection.project.users.forSelect(),{blank: '---'})
         })
@@ -303,7 +317,7 @@ var StoryView = FormView.extend({
       this.$el.append(
         this.makeFormControl({
           name: "labels",
-          label: "Labels",
+          label: I18n.t('fields.labels'),
           control: this.textField("labels")
         })
       );
@@ -312,7 +326,7 @@ var StoryView = FormView.extend({
 
       this.$el.append(
         this.makeFormControl(function(div) {
-          $(div).append(this.label("description", "Description"));
+          $(div).append(this.label("description", I18n.t('fields.description')));
           $(div).append('<br/>');
           if(this.model.isNew() || this.model.get('editingDescription')) {
             $(div).append(this.textArea("description"));
@@ -321,7 +335,7 @@ var StoryView = FormView.extend({
             $(description).addClass('description');
             $(description).text(this.model.get('description'));
             $(div).append(description);
-            $(description).after('<input id="edit-description" type="button" value="Edit"/>');
+            $(description).after('<input id="edit-description" type="button" value="' + I18n.t('actions.edit') + '"/>');
           }
         })
       );
@@ -377,7 +391,7 @@ var StoryView = FormView.extend({
     if (this.model.notes.length > 0) {
       var el = this.$el;
       el.append('<hr/>');
-      el.append('<h3>Notes</h3>');
+      el.append('<h3>' + I18n.t('fields.notes') + '</h3>');
       el.append('<div class="notelist"/>');
       this.renderNotesCollection();
     }

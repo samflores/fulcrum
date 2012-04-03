@@ -266,5 +266,4 @@ var Story = Backbone.Model.extend({
       return !note.isNew();
     });
   }
-
 });
