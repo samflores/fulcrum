@@ -42,7 +42,7 @@ describe "Notes" do
       within('#in_progress .story') do
         click_on 'Expand'
         fill_in 'note', :with => 'Adding a new note'
-        click_on 'Add note'
+        click_on 'Add Note'
       end
 
       find('#in_progress .story .notelist p.note').should have_content('Adding a new note')
