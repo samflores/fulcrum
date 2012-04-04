@@ -5,11 +5,11 @@ development:
   pool: 5
   timeout: 5000
 
-test:
-  adapter: sqlite3
-  database: db/test.sqlite3
-  pool: 5
-  timeout: 5000
+# test:
+#   adapter: sqlite3
+#   database: db/test.sqlite3
+#   pool: 5
+#   timeout: 5000
 
 production:
   adapter: sqlite3
@@ -28,15 +28,15 @@ production:
 #   password:
 #   host: localhost
 #
-# test:
-#   adapter: mysql2
-#   encoding: utf8
-#   reconnect: false
-#   database: fulcrum_test
-#   pool: 5
-#   username: root
-#   password:
-#   host: localhost
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: fulcrum_test
+  pool: 5
+  username: root
+  password:
+  host: localhost
 #
 # production:
 #   adapter: mysql2
