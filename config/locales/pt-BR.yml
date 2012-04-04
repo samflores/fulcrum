@@ -65,13 +65,14 @@ pt-BR:
   actions:
     log_out:   "Sair"
     log_in:    "Entrar"
+    sign_up:   "Registrar-se"
+    sign_in:   "Sign in"
     save:      "Salvar"
     cancel:    "Cancelar"
     edit:      "Editar"
     delete:    "Apagar"
     remove:    "Remover"
     back:      "Voltar"
-    sign_up:   "Registrar-se"
     add_user:  "Adicionar Membro"
     add_story: "Adicionar História"
     add_note:  "Adicionar Comentário"
@@ -113,7 +114,7 @@ pt-BR:
       user:    "Membro"
       story:   "História"
       project: "Projeto"
-      notes:   "Comentário"
+      note:    "Comentário"
     attributes:
       project:
         name:                "Nome"

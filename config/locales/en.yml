@@ -3,8 +3,14 @@
 
 en:
   fulcrum:  "Fulcrum"
-
   author unknown: "Author Unknown"
+  no_estimate:    "No estimate"
+
+  words:
+    requested: "Requested"
+    by:        "by"
+    _on:       "on"
+    week:      "week"
 
   transitions:
     start: "start"
@@ -14,23 +20,64 @@ en:
     reject: "reject"
     restart: "restart"
 
+  point_scale:
+    fibonacci:     "Fibonacci"
+    powers_of_two: "Powers of Two"
+    linear:        "Linear"
+
+  story_state:
+    unscheduled: "Unscheduled"
+    unstarted:   "Unstarted"
+    started:     "Started"
+    finished:    "Finished"
+    delivered:   "Delivered"
+    accepted:    "Accepted"
+    rejected:    "Rejected"
+
+  story_type:
+    feature: "Feature"
+    chore:   "Chore"
+    bug:     "Bug"
+    release: "Release"
+
+  fields:
+    notes:        "Notes"
+    description:  "Description"
+    labels:       "Labels"
+    estimate:     "Estimate"
+    owned_by:     "Owned by"
+    requested_by: "Requested by"
+    state:        "State"
+    story_type:   "Type"
+    story_title:  "Title"
+    note:         "Note"
+
+  titles:
+    project_members:    "Project Members"
+    add_project_member: "Add Project Member"
+
   panels:
-    done: "Done"
+    done:        "Done"
     in_progress: "In Progress"
-    backlog: "Backlog"
-    chilly_bin: "Chilly Bin"
+    backlog:     "Backlog"
+    chilly_bin:  "Chilly Bin"
 
   actions:
-    log_out:  "Log out"
-    log_in:   "Log in"
-    sign_up:  "Sign up"
-    edit:     "Edit"
-    delete:   "Delete"
-    back:     "Back"
+    log_out:   "Log out"
+    log_in:    "Log in"
+    sign_up:   "Sign up"
+    sign_in:   "Sign in"
+    save:      "Save"
+    cancel:    "Cancel"
+    edit:      "Edit"
+    delete:    "Delete"
+    remove:    "Remover"
+    back:      "Back"
+    add_user:  "Add Member"
     add_story: "Add Story"
-    edit: "Edit"
-    import: "Import"
-    export: "Export"
+    add_note:  "Add Note"
+    import:    "Import"
+    export:    "Export"
 
   projects:
     new project:        "New Project"
@@ -56,6 +103,21 @@ en:
 
   activerecord:
     models:
-      user: 'Member'
-      story: 'Story'
-      project: 'Project'
+      user:    "Member"
+      story:   "Story"
+      project: "Project"
+      note:    "Note"
+    attributes:
+      project:
+        name:                "Name"
+        point_scale:         "Point Scale"
+        default_velocity:    "Default Velocity"
+        start_date:          "Start Date"
+        iteration_start_day: "Iteration Start Day"
+        iteration_length:    "Iteration Length"
+      user:
+        email:                 "Email"
+        name:                  "Name"
+        initials:              "Initials"
+        password:              "Password"
+        password_confirmation: "Password Confirmation"
